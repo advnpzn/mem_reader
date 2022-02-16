@@ -17,7 +17,7 @@ int main() {
 	);
 
 	if (hProcess == NULL) {
-		std::cout << "OpenProcess Failed.\nProcessID : " << pid << "\Error Code : " << std::dec << GetLastError() << std::endl;
+		std::cout << "OpenProcess Failed.\nProcessID : " << pid << "\nError Code : " << std::dec << GetLastError() << std::endl;
 		CloseHandle(hProcess);
 		system("pause");
 		return EXIT_FAILURE;
