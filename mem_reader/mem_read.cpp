@@ -18,6 +18,7 @@ int main() {
 
 	if (hProcess == NULL) {
 		std::cout << "OpenProcess Failed.\nProcessID : " << pid << "\Error Code : " << std::dec << GetLastError() << std::endl;
+		CloseHandle(hProcess);
 		system("pause");
 		return EXIT_FAILURE;
 	}
@@ -38,6 +39,8 @@ int main() {
 		sizeof(int),
 		NULL
 	);
+
+	CloseHandle(hProcess);
 
 	if (read_proc_mem == 0) {
 		std::cout << "Error!\nError Code : " << std::dec << GetLastError << std::endl;
